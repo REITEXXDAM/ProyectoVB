@@ -1,0 +1,5 @@
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.vbproj.AssemblyReference.cache
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.Login.resources
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.Resources.resources
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.vbproj.GenerateResource.cache
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.vbproj.CoreCompileInputs.cache
