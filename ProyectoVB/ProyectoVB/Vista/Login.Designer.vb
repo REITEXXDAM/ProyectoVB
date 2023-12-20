@@ -20,20 +20,20 @@ Partial Class Login
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.principalLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.agendaBox = New System.Windows.Forms.PictureBox()
+        Me.passwordGroupBox = New System.Windows.Forms.GroupBox()
+        Me.passwordTextBox = New System.Windows.Forms.TextBox()
         Me.agendaLabel = New System.Windows.Forms.Label()
         Me.nameGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.passwordGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.loginButton = New System.Windows.Forms.Button()
+        Me.agendaBox = New System.Windows.Forms.PictureBox()
+        Me.userTextBox = New System.Windows.Forms.TextBox()
         Me.principalLayoutPanel.SuspendLayout()
-        CType(Me.agendaBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.nameGroupBox.SuspendLayout()
         Me.passwordGroupBox.SuspendLayout()
+        Me.nameGroupBox.SuspendLayout()
+        CType(Me.agendaBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'principalLayoutPanel
@@ -44,6 +44,7 @@ Partial Class Login
         Me.principalLayoutPanel.Controls.Add(Me.passwordGroupBox, 1, 2)
         Me.principalLayoutPanel.Controls.Add(Me.agendaBox, 0, 1)
         Me.principalLayoutPanel.Controls.Add(Me.agendaLabel, 0, 0)
+        Me.principalLayoutPanel.Controls.Add(Me.loginButton, 1, 3)
         Me.principalLayoutPanel.Controls.Add(Me.nameGroupBox, 1, 1)
         Me.principalLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.principalLayoutPanel.Location = New System.Drawing.Point(0, 0)
@@ -58,16 +59,24 @@ Partial Class Login
         Me.principalLayoutPanel.TabIndex = 0
         Me.principalLayoutPanel.Tag = ""
         '
-        'agendaBox
+        'passwordGroupBox
         '
-        Me.agendaBox.Image = Global.ProyectoVB.My.Resources.Resources.agenda
-        Me.agendaBox.Location = New System.Drawing.Point(3, 128)
-        Me.agendaBox.Name = "agendaBox"
-        Me.principalLayoutPanel.SetRowSpan(Me.agendaBox, 2)
-        Me.agendaBox.Size = New System.Drawing.Size(613, 244)
-        Me.agendaBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.agendaBox.TabIndex = 0
-        Me.agendaBox.TabStop = False
+        Me.passwordGroupBox.Controls.Add(Me.passwordTextBox)
+        Me.passwordGroupBox.Font = New System.Drawing.Font("Modern No. 20", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.passwordGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.passwordGroupBox.Location = New System.Drawing.Point(622, 253)
+        Me.passwordGroupBox.Name = "passwordGroupBox"
+        Me.passwordGroupBox.Size = New System.Drawing.Size(613, 119)
+        Me.passwordGroupBox.TabIndex = 4
+        Me.passwordGroupBox.TabStop = False
+        Me.passwordGroupBox.Text = "Password"
+        '
+        'passwordTextBox
+        '
+        Me.passwordTextBox.Location = New System.Drawing.Point(96, 48)
+        Me.passwordTextBox.Name = "passwordTextBox"
+        Me.passwordTextBox.Size = New System.Drawing.Size(441, 47)
+        Me.passwordTextBox.TabIndex = 0
         '
         'agendaLabel
         '
@@ -83,7 +92,9 @@ Partial Class Login
         '
         'nameGroupBox
         '
-        Me.nameGroupBox.Controls.Add(Me.TextBox1)
+        Me.nameGroupBox.Controls.Add(Me.userTextBox)
+        Me.nameGroupBox.Font = New System.Drawing.Font("Modern No. 20", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nameGroupBox.ForeColor = System.Drawing.SystemColors.Window
         Me.nameGroupBox.Location = New System.Drawing.Point(622, 128)
         Me.nameGroupBox.Name = "nameGroupBox"
         Me.nameGroupBox.Size = New System.Drawing.Size(613, 119)
@@ -91,29 +102,37 @@ Partial Class Login
         Me.nameGroupBox.TabStop = False
         Me.nameGroupBox.Text = "User"
         '
-        'TextBox1
+        'loginButton
         '
-        Me.TextBox1.Location = New System.Drawing.Point(245, 48)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 31)
-        Me.TextBox1.TabIndex = 0
+        Me.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.loginButton.BackColor = System.Drawing.Color.BlueViolet
+        Me.loginButton.Font = New System.Drawing.Font("Modern No. 20", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.loginButton.ForeColor = System.Drawing.SystemColors.Window
+        Me.loginButton.Location = New System.Drawing.Point(790, 462)
+        Me.loginButton.Name = "loginButton"
+        Me.principalLayoutPanel.SetRowSpan(Me.loginButton, 2)
+        Me.loginButton.Size = New System.Drawing.Size(276, 75)
+        Me.loginButton.TabIndex = 5
+        Me.loginButton.Text = "Login"
+        Me.loginButton.UseVisualStyleBackColor = False
         '
-        'passwordGroupBox
+        'agendaBox
         '
-        Me.passwordGroupBox.Controls.Add(Me.TextBox3)
-        Me.passwordGroupBox.Location = New System.Drawing.Point(622, 253)
-        Me.passwordGroupBox.Name = "passwordGroupBox"
-        Me.passwordGroupBox.Size = New System.Drawing.Size(613, 119)
-        Me.passwordGroupBox.TabIndex = 4
-        Me.passwordGroupBox.TabStop = False
-        Me.passwordGroupBox.Text = "Password"
+        Me.agendaBox.Image = Global.ProyectoVB.My.Resources.Resources.agenda
+        Me.agendaBox.Location = New System.Drawing.Point(3, 128)
+        Me.agendaBox.Name = "agendaBox"
+        Me.principalLayoutPanel.SetRowSpan(Me.agendaBox, 2)
+        Me.agendaBox.Size = New System.Drawing.Size(613, 244)
+        Me.agendaBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.agendaBox.TabIndex = 0
+        Me.agendaBox.TabStop = False
         '
-        'TextBox3
+        'userTextBox
         '
-        Me.TextBox3.Location = New System.Drawing.Point(245, 48)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 31)
-        Me.TextBox3.TabIndex = 0
+        Me.userTextBox.Location = New System.Drawing.Point(96, 46)
+        Me.userTextBox.Name = "userTextBox"
+        Me.userTextBox.Size = New System.Drawing.Size(441, 47)
+        Me.userTextBox.TabIndex = 1
         '
         'Login
         '
@@ -123,16 +142,15 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(1238, 625)
         Me.Controls.Add(Me.principalLayoutPanel)
         Me.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.Text = "ACCESO | AGENDA"
         Me.principalLayoutPanel.ResumeLayout(False)
         Me.principalLayoutPanel.PerformLayout()
-        CType(Me.agendaBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.nameGroupBox.ResumeLayout(False)
-        Me.nameGroupBox.PerformLayout()
         Me.passwordGroupBox.ResumeLayout(False)
         Me.passwordGroupBox.PerformLayout()
+        Me.nameGroupBox.ResumeLayout(False)
+        Me.nameGroupBox.PerformLayout()
+        CType(Me.agendaBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -141,7 +159,8 @@ Partial Class Login
     Friend WithEvents agendaBox As PictureBox
     Friend WithEvents agendaLabel As Label
     Friend WithEvents passwordGroupBox As GroupBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents passwordTextBox As TextBox
     Friend WithEvents nameGroupBox As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents loginButton As Button
+    Friend WithEvents userTextBox As TextBox
 End Class
