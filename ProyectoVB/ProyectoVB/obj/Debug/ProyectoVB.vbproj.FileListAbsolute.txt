@@ -3,3 +3,10 @@ C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.L
 C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.Resources.resources
 C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.vbproj.GenerateResource.cache
 C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.vbproj.CoreCompileInputs.cache
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\ProyectoVB.exe.config
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\ProyectoVB.exe
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\ProyectoVB.pdb
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\ProyectoVB.xml
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.exe
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.xml
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.pdb
