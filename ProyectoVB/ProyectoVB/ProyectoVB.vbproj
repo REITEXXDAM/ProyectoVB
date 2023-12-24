@@ -112,6 +112,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\Controller.vb" />
+    <Compile Include="Modelo\SQLiteCommand.vb" />
+    <Compile Include="Modelo\SQLiteConnection.vb" />
     <Compile Include="Modelo\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
