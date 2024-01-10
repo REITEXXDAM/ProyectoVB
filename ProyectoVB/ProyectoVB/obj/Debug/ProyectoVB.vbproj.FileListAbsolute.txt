@@ -31,3 +31,12 @@ C:\Users\REITEXX GAMING\Downloads\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\Pro
 C:\Users\REITEXX GAMING\Downloads\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.exe
 C:\Users\REITEXX GAMING\Downloads\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.xml
 C:\Users\REITEXX GAMING\Downloads\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.pdb
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\EntityFramework.dll
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\System.Data.SQLite.dll
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\EntityFramework.xml
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\System.Data.SQLite.xml
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.vbproj.CopyComplete

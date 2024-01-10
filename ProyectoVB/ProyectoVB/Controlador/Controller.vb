@@ -1,32 +1,35 @@
-﻿Public Class Controller
+﻿Imports System.Data.SQLite
 
-    'BBDD
+Public Class Controller
     Dim conexionBBDD As New MiSQLiteConnection()
-
-    Dim comandoBBDD As New SQLiteCommand()
-
-    'USUARIOS
-    Dim user As New Usuario()
-    Dim listaUsuario As New List(Of Usuario)
-
-    Public Sub New()
-    End Sub
+    Dim listaUsuarios As New List(Of Usuario)
 
 
-    Public Function verificarLogin(ByVal user As String, ByVal password As String) As String
 
-        'VERIFICAMOS SI EL USUARIO Y CONTRASEÑA ESTAN VACIOS O NO
+    Public Sub VerificarLogin(ByVal user As String, ByVal password As String)
+        'VERIFICAMOS SI EL USUARIO Y CONTRASEÑA ESTÁN VACÍOS O NO
         If String.IsNullOrEmpty(user) OrElse String.IsNullOrEmpty(password) Then
-            MessageBox.Show("Los campos no pueden estar vacios.", "ACESSO DENEGADO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Los campos no pueden estar vacíos.", "ACCESO DENEGADO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
 
+        ' Verifica las credenciales con la lista de usuarios
+        Dim usuarioEncontrado As Boolean = False
+        For Each usuario In listaUsuarios
+            If usuario.Nombre.ToLower() = user.ToLower() AndAlso usuario.Password = password Then
+                usuarioEncontrado = True
+                Exit For
+            End If
+        Next
 
-
-
-
-    End Function
-
-
-
-
+        ' Muestra el mensaje correspondiente
+        If usuarioEncontrado Then
+            MsgBox("Inicio de sesión exitoso.", MsgBoxStyle.Information)
+        Else
+            MsgBox("Usuario o contraseña incorrectos.", MsgBoxStyle.Exclamation)
+        End If
+    End Sub
 End Class
+
+
+

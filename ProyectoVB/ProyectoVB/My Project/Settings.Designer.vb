@@ -56,8 +56,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("DATA SOURCE= C:\Users\REITEXX GAMING\Downloads\ProyectoVB\ProyectoVB\ProyectoVB\B"& _ 
-            "BDD.db")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("DATA SOURCE= C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\BBDD.db")>  _
         Public ReadOnly Property conexion() As String
             Get
                 Return CType(Me("conexion"),String)

@@ -6,7 +6,7 @@ Public Class SQLiteCommand
     Public Sub ConsultarUsuarios()
         Try
             Dim conexion As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
-            Dim consulta As String = "SELECT ID, NOMBRE, PASSWORD FROM USUARIOS"
+            Dim consulta As String = "SELECT ID, NAME, PASSWORD FROM USUARIO"
             conexion.Open()
             Dim cmd As New SQLiteCmd(consulta, conexion)
             Dim lector As SQLiteDataReader = cmd.ExecuteReader()
@@ -14,7 +14,7 @@ Public Class SQLiteCommand
             Dim resultado As String = ""
 
             While lector.Read()
-                resultado &= lector.GetString(0) & "-" & lector.GetString(1) & vbLf
+                resultado &= lector.GetInt32(0) & "-" & lector.GetString(1) & "-" & lector.GetString(2) & vbLf
             End While
 
             MsgBox(resultado)
@@ -25,6 +25,7 @@ Public Class SQLiteCommand
             MsgBox(ex.Message)
         End Try
     End Sub
+
 
     Private Function ExecuteReader() As SQLiteDataReader
         Throw New NotImplementedException()

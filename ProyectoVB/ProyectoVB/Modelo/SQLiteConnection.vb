@@ -1,22 +1,32 @@
 ﻿Imports System.Data.SQLite
 
 Public Class MiSQLiteConnection
+    Public con As SQLiteConnection
 
-    Dim con As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
+    Public Sub New()
+        con = New SQLiteConnection(My.Settings.conexion)
+    End Sub
 
     Public Sub AbrirConexion()
         Try
             con.Open()
             MsgBox("Conexión abierta correctamente.")
-            ' Puedes realizar otras operaciones con la conexión aquí.
-            ' Por ejemplo, ejecutar consultas SQL, realizar operaciones en la base de datos, etc.
         Catch ex As Exception
             MsgBox("Error al abrir la conexión: " & ex.Message)
         End Try
     End Sub
 
-    ' ... otros miembros y métodos de tu clase
-
+    ' Agregamos un método para cerrar la conexión
+    Public Sub CerrarConexion()
+        If con.State = ConnectionState.Open Then
+            con.Close()
+            MsgBox("Conexión cerrada correctamente.")
+        End If
+    End Sub
 End Class
+
+
+
+
 
 
