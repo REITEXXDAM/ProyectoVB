@@ -30,13 +30,13 @@ Partial Class AdminPanel
         Me.contactoComboBox = New System.Windows.Forms.ComboBox()
         Me.agendaBox = New System.Windows.Forms.PictureBox()
         Me.nombreContactoGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.nombreContactoTextBox = New System.Windows.Forms.TextBox()
         Me.apellidoContactoGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.apellidoContactoTextBox = New System.Windows.Forms.TextBox()
         Me.telefonoContactoGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.telefonoContactoTextBox = New System.Windows.Forms.TextBox()
         Me.emailContactoGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.emailContactoTextBox = New System.Windows.Forms.TextBox()
         Me.agendaLabel = New System.Windows.Forms.Label()
         Me.panelLayoutPanel.SuspendLayout()
         Me.contactoGroupBox.SuspendLayout()
@@ -143,7 +143,7 @@ Partial Class AdminPanel
         'nombreContactoGroupBox
         '
         Me.nombreContactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nombreContactoGroupBox.Controls.Add(Me.TextBox1)
+        Me.nombreContactoGroupBox.Controls.Add(Me.nombreContactoTextBox)
         Me.nombreContactoGroupBox.Font = New System.Drawing.Font("Modern No. 20", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nombreContactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
         Me.nombreContactoGroupBox.Location = New System.Drawing.Point(450, 246)
@@ -155,18 +155,18 @@ Partial Class AdminPanel
         Me.nombreContactoGroupBox.TabStop = False
         Me.nombreContactoGroupBox.Text = "NOMBRE"
         '
-        'TextBox1
+        'nombreContactoTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(96, 46)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(440, 47)
-        Me.TextBox1.TabIndex = 1
+        Me.nombreContactoTextBox.Location = New System.Drawing.Point(96, 46)
+        Me.nombreContactoTextBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.nombreContactoTextBox.Name = "nombreContactoTextBox"
+        Me.nombreContactoTextBox.Size = New System.Drawing.Size(440, 47)
+        Me.nombreContactoTextBox.TabIndex = 1
         '
         'apellidoContactoGroupBox
         '
         Me.apellidoContactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.apellidoContactoGroupBox.Controls.Add(Me.TextBox2)
+        Me.apellidoContactoGroupBox.Controls.Add(Me.apellidoContactoTextBox)
         Me.apellidoContactoGroupBox.Font = New System.Drawing.Font("Modern No. 20", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.apellidoContactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
         Me.apellidoContactoGroupBox.Location = New System.Drawing.Point(450, 448)
@@ -178,18 +178,18 @@ Partial Class AdminPanel
         Me.apellidoContactoGroupBox.TabStop = False
         Me.apellidoContactoGroupBox.Text = "APELLIDO"
         '
-        'TextBox2
+        'apellidoContactoTextBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(96, 46)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(440, 47)
-        Me.TextBox2.TabIndex = 1
+        Me.apellidoContactoTextBox.Location = New System.Drawing.Point(96, 46)
+        Me.apellidoContactoTextBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.apellidoContactoTextBox.Name = "apellidoContactoTextBox"
+        Me.apellidoContactoTextBox.Size = New System.Drawing.Size(440, 47)
+        Me.apellidoContactoTextBox.TabIndex = 1
         '
         'telefonoContactoGroupBox
         '
         Me.telefonoContactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.telefonoContactoGroupBox.Controls.Add(Me.TextBox3)
+        Me.telefonoContactoGroupBox.Controls.Add(Me.telefonoContactoTextBox)
         Me.telefonoContactoGroupBox.Font = New System.Drawing.Font("Modern No. 20", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.telefonoContactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
         Me.telefonoContactoGroupBox.Location = New System.Drawing.Point(450, 650)
@@ -201,18 +201,18 @@ Partial Class AdminPanel
         Me.telefonoContactoGroupBox.TabStop = False
         Me.telefonoContactoGroupBox.Text = "TELEFONO CONTACTO"
         '
-        'TextBox3
+        'telefonoContactoTextBox
         '
-        Me.TextBox3.Location = New System.Drawing.Point(96, 46)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(440, 47)
-        Me.TextBox3.TabIndex = 1
+        Me.telefonoContactoTextBox.Location = New System.Drawing.Point(96, 46)
+        Me.telefonoContactoTextBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.telefonoContactoTextBox.Name = "telefonoContactoTextBox"
+        Me.telefonoContactoTextBox.Size = New System.Drawing.Size(440, 47)
+        Me.telefonoContactoTextBox.TabIndex = 1
         '
         'emailContactoGroupBox
         '
         Me.emailContactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.emailContactoGroupBox.Controls.Add(Me.TextBox4)
+        Me.emailContactoGroupBox.Controls.Add(Me.emailContactoTextBox)
         Me.emailContactoGroupBox.Font = New System.Drawing.Font("Modern No. 20", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.emailContactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
         Me.emailContactoGroupBox.Location = New System.Drawing.Point(450, 853)
@@ -224,13 +224,13 @@ Partial Class AdminPanel
         Me.emailContactoGroupBox.TabStop = False
         Me.emailContactoGroupBox.Text = "EMAIL"
         '
-        'TextBox4
+        'emailContactoTextBox
         '
-        Me.TextBox4.Location = New System.Drawing.Point(96, 46)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(440, 47)
-        Me.TextBox4.TabIndex = 1
+        Me.emailContactoTextBox.Location = New System.Drawing.Point(96, 46)
+        Me.emailContactoTextBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.emailContactoTextBox.Name = "emailContactoTextBox"
+        Me.emailContactoTextBox.Size = New System.Drawing.Size(440, 47)
+        Me.emailContactoTextBox.TabIndex = 1
         '
         'agendaLabel
         '
@@ -278,12 +278,12 @@ Partial Class AdminPanel
     Friend WithEvents contactoComboBox As ComboBox
     Friend WithEvents agendaBox As PictureBox
     Friend WithEvents apellidoContactoGroupBox As GroupBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents apellidoContactoTextBox As TextBox
     Friend WithEvents nombreContactoGroupBox As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents nombreContactoTextBox As TextBox
     Friend WithEvents emailContactoGroupBox As GroupBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents emailContactoTextBox As TextBox
     Friend WithEvents telefonoContactoGroupBox As GroupBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents telefonoContactoTextBox As TextBox
     Friend WithEvents agendaLabel As Label
 End Class
