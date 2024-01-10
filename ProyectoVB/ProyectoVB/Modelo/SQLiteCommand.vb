@@ -3,7 +3,7 @@ Imports SQLiteCmd = System.Data.SQLite.SQLiteCommand
 
 Public Class SQLiteCommand
 
-    Public Sub ConsultarUsuarios()
+    Public Sub ConsultarUsuarios(ByVal listaUsuarios As List(Of Usuario))
         Try
             Dim conexion As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
             Dim consulta As String = "SELECT ID, NAME, PASSWORD FROM USUARIO"
@@ -11,13 +11,15 @@ Public Class SQLiteCommand
             Dim cmd As New SQLiteCmd(consulta, conexion)
             Dim lector As SQLiteDataReader = cmd.ExecuteReader()
 
-            Dim resultado As String = ""
-
             While lector.Read()
-                resultado &= lector.GetInt32(0) & "-" & lector.GetString(1) & "-" & lector.GetString(2) & vbLf
-            End While
+                Dim id As Integer = lector.GetInt32(0)
+                Dim nombre As String = lector.GetString(1)
+                Dim password As String = lector.GetString(2)
 
-            MsgBox(resultado)
+                ' Crea un nuevo usuario y agrégalo a la lista
+                Dim nuevoUsuario As New Usuario(id, nombre, password)
+                listaUsuarios.Add(nuevoUsuario)
+            End While
 
             lector.Close()
             conexion.Close()
@@ -26,11 +28,11 @@ Public Class SQLiteCommand
         End Try
     End Sub
 
-
     Private Function ExecuteReader() As SQLiteDataReader
         Throw New NotImplementedException()
     End Function
 End Class
+
 
 
 

@@ -1,10 +1,6 @@
-﻿Imports System.Data.SQLite
-
-Public Class Controller
+﻿Public Class Controller
     Dim conexionBBDD As New MiSQLiteConnection()
-    Dim listaUsuarios As New List(Of Usuario)
-
-
+    Public listaUsuarios As New List(Of Usuario)
 
     Public Sub VerificarLogin(ByVal user As String, ByVal password As String)
         'VERIFICAMOS SI EL USUARIO Y CONTRASEÑA ESTÁN VACÍOS O NO

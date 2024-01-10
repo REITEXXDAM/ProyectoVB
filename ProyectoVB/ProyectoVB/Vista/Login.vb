@@ -4,10 +4,8 @@
     Dim command As New SQLiteCommand()
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' No es necesario cargar los usuarios aquí, ya que el controlador se encarga de cargarlos al inicializarse.
-        ' Puedes quitar esta línea si decides cargar los usuarios en otro momento.
-
-        command.ConsultarUsuarios()
+        ' Llama al método ConsultarUsuarios y pasa la lista de usuarios al controlador
+        command.ConsultarUsuarios(controller.listaUsuarios)
     End Sub
 
     Private Sub loginButton_Click(sender As Object, e As EventArgs) Handles loginButton.Click
@@ -16,4 +14,5 @@
         controller.VerificarLogin(usuario, password)
     End Sub
 End Class
+
 
