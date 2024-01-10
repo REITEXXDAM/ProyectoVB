@@ -40,3 +40,5 @@ C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\EntityFramew
 C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\System.Data.SQLite.xml
 C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.vbproj.CopyComplete
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.AdminPanel.resources
+C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.UserPanel.resources

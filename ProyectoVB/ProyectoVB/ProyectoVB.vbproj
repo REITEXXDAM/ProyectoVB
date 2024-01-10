@@ -131,6 +131,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Vista\AdminPanel.Designer.vb">
+      <DependentUpon>AdminPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AdminPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\UserPanel.Designer.vb">
+      <DependentUpon>UserPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\UserPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -145,8 +157,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AdminPanel.resx">
+      <DependentUpon>AdminPanel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\UserPanel.resx">
+      <DependentUpon>UserPanel.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
