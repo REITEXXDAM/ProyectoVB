@@ -24,14 +24,6 @@
             MsgBox("Usuario o contraseña incorrectos.", MsgBoxStyle.Exclamation)
         End If
     End Sub
-
-    Private Sub agendaBox_Click(sender As Object, e As EventArgs) Handles agendaBox.Click
-        ' Código para el evento de hacer clic en agendaBox
-    End Sub
-
-    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
-        ' Código para el evento de cambio de tamaño del formulario
-    End Sub
 End Class
 
 
