@@ -52,6 +52,32 @@ Public Class SQLiteCommand
         End Try
     End Sub
 
+    Public Sub ActualizarContacto(ByVal id As Integer, ByVal nuevoNombre As String, ByVal nuevoApellido As String, ByVal nuevoTelefono As Integer, ByVal nuevoEmail As String, ByVal conexion As MiSQLiteConnection)
+        Try
+            Using conexionSQLite As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
+                Dim consulta As String = "UPDATE CONTACTO SET NOMBRE = @nombre, APELLIDO = @apellido, TELEFONO = @telefono, EMAIL = @email WHERE CODIGO = @id"
+                conexionSQLite.Open()
+                Using cmd As New SQLiteCmd(consulta, conexionSQLite)
+                    ' Assign parameters with the values of the contact to be updated
+                    cmd.Parameters.AddWithValue("@nombre", nuevoNombre)
+                    cmd.Parameters.AddWithValue("@apellido", nuevoApellido)
+                    cmd.Parameters.AddWithValue("@telefono", nuevoTelefono)
+                    cmd.Parameters.AddWithValue("@email", nuevoEmail)
+                    cmd.Parameters.AddWithValue("@id", id)
+
+                    ' Execute the query
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            ' Ensure to close the connection after use
+            conexion.CerrarConexion()
+        End Try
+    End Sub
+
+
     Public Sub ConsultarContactos(ByVal listaContactos As List(Of Contacto), conexionBBDD As MiSQLiteConnection)
         Try
             Dim conexion As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
@@ -79,6 +105,8 @@ Public Class SQLiteCommand
             MsgBox(ex.Message)
         End Try
     End Sub
+
+
 
     Private Function ExecuteReader() As SQLiteDataReader
         Throw New NotImplementedException()

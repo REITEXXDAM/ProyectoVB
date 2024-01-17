@@ -61,16 +61,67 @@
             ' Llamar al método en el controlador para consultar los contactos
             controller.ConsultarContactos(listaContactos)
 
+            ' Usar HashSet para evitar duplicados
+            Dim nombresSinDuplicados As New HashSet(Of String)()
+
+            ' Agregar nombres de contactos al HashSet
+            For Each contacto As Contacto In listaContactos
+                nombresSinDuplicados.Add(contacto.nombre)
+            Next
+
             ' Limpiar ComboBox antes de cargar los nuevos datos
             contactoComboBox.Items.Clear()
 
-            ' Agregar nombres de contactos al ComboBox
-            For Each contacto As Contacto In listaContactos
-                contactoComboBox.Items.Add(contacto.nombre)
+            ' Agregar nombres sin duplicados al ComboBox
+            For Each nombre As String In nombresSinDuplicados
+                contactoComboBox.Items.Add(nombre)
             Next
         Catch ex As Exception
             ' Mostrar mensaje de error si algo sale mal al cargar los nombres de contactos
             MessageBox.Show("Error al cargar los nombres de los contactos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+
+
+    Private Sub actualizarButton_Click(sender As Object, e As EventArgs) Handles actualizarButton.Click
+        Try
+            ' Obtener el índice seleccionado en el ComboBox
+            Dim indiceSeleccionado As Integer = contactoComboBox.SelectedIndex
+
+            ' Verificar si hay elementos seleccionados en el ComboBox
+            If indiceSeleccionado <> -1 Then
+                ' Obtener el contacto seleccionado
+                Dim contactoSeleccionado As Contacto = listaContactos(indiceSeleccionado)
+
+                ' Recoger los nuevos datos del formulario
+                Dim nuevoNombre As String = nombreContactoTextBox.Text
+                Dim nuevoApellido As String = apellidoContactoTextBox.Text
+                Dim nuevoTelefono As Integer = Convert.ToInt32(telefonoContactoTextBox.Text)
+                Dim nuevoEmail As String = emailContactoTextBox.Text
+
+                ' Llamar al método en el controlador para actualizar el contacto
+                If controller.ActualizarContacto(contactoSeleccionado.id, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail) Then
+                    ' Mostrar mensaje de éxito
+                    MessageBox.Show("Contacto actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' Actualizar la lista de contactos
+                    listaContactos(indiceSeleccionado) = New Contacto(contactoSeleccionado.id, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail)
+
+                    ' Actualizar la lista de nombres en el ComboBox
+                    CargarNombresDeContactos()
+                Else
+                    ' Mostrar mensaje de error si la actualización en el controlador falla
+                    MessageBox.Show("Error al actualizar el contacto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        Catch ex As Exception
+            ' Mostrar mensaje de error si algo sale mal
+            MessageBox.Show("Error al actualizar el contacto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub eliminarButton_Click(sender As Object, e As EventArgs) Handles eliminarButton.Click
+
     End Sub
 End Class

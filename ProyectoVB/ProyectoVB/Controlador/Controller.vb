@@ -73,6 +73,29 @@
         End Try
     End Function
 
+    Public Function ActualizarContacto(ByVal id As Integer, ByVal nuevoNombre As String, ByVal nuevoApellido As String, ByVal nuevoTelefono As Integer, ByVal nuevoEmail As String) As Boolean
+        Try
+            ' Verificar que los datos sean válidos (puedes agregar más lógica de validación según tus requerimientos)
+            If String.IsNullOrEmpty(nuevoNombre) Or String.IsNullOrEmpty(nuevoApellido) Or nuevoTelefono <= 0 Or String.IsNullOrEmpty(nuevoEmail) Then
+                MessageBox.Show("Por favor, complete todos los campos correctamente.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return False
+            End If
+
+            ' Llamar al método en SQLiteCommand para actualizar el contacto en la base de datos
+            Dim sqliteCommand As New SQLiteCommand()
+            sqliteCommand.ActualizarContacto(id, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail, conexionBBDD)
+
+            ' Puedes realizar más validaciones o acciones después de la actualización si es necesario
+
+            Return True
+        Catch ex As Exception
+            ' Mostrar mensaje de error si algo sale mal en la actualización
+            MessageBox.Show("Error al actualizar el contacto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End Try
+    End Function
+
+
 
 End Class
 
