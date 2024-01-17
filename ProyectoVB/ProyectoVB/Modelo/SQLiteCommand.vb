@@ -28,6 +28,30 @@ Public Class SQLiteCommand
         End Try
     End Sub
 
+    Public Sub InsertarContacto(ByVal nombre As String, ByVal apellido As String, ByVal telefono As Integer, ByVal email As String, ByVal conexion As MiSQLiteConnection)
+        Try
+            Using conexionSQLite As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
+                Dim consulta As String = "INSERT INTO CONTACTO (NOMBRE, APELLIDO, TELEFONO, EMAIL) VALUES (@nombre, @apellido, @telefono, @email)"
+                conexionSQLite.Open()
+                Using cmd As New SQLiteCmd(consulta, conexionSQLite)
+                    ' Assign parameters with the values of the new contact
+                    cmd.Parameters.AddWithValue("@nombre", nombre)
+                    cmd.Parameters.AddWithValue("@apellido", apellido)
+                    cmd.Parameters.AddWithValue("@telefono", telefono)
+                    cmd.Parameters.AddWithValue("@email", email)
+
+                    ' Execute the query
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            ' Ensure to close the connection after use
+            conexion.CerrarConexion()
+        End Try
+    End Sub
+
     Private Function ExecuteReader() As SQLiteDataReader
         Throw New NotImplementedException()
     End Function

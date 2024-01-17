@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -56,7 +56,8 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("DATA SOURCE= C:\Users\8FDAM12\Desktop\ProyectoVB\ProyectoVB\ProyectoVB\BBDD.db")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("DATA SOURCE= C:\Users\RETEXDEV\Desktop\REPOS\ProyectoVB\ProyectoVB\ProyectoVB\BBD"& _ 
+            "D.db")>  _
         Public ReadOnly Property conexion() As String
             Get
                 Return CType(Me("conexion"),String)

@@ -34,6 +34,29 @@
         Return user.ToLower() = "user" AndAlso password = "user"
     End Function
 
+    Public Function InsertarContacto(ByVal nombre As String, ByVal apellido As String, ByVal telefono As Integer, ByVal email As String) As Boolean
+        Try
+            ' Verificar que los datos sean válidos (puedes agregar más lógica de validación según tus requerimientos)
+            If String.IsNullOrEmpty(nombre) Or String.IsNullOrEmpty(apellido) Or telefono <= 0 Or String.IsNullOrEmpty(email) Then
+                MessageBox.Show("Por favor, complete todos los campos correctamente.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return False
+            End If
+
+            ' Llamar al método en SQLiteCommand para insertar el contacto en la base de datos
+            Dim sqliteCommand As New SQLiteCommand()
+            sqliteCommand.InsertarContacto(nombre, apellido, telefono, email, conexionBBDD)
+
+            ' Puedes realizar más validaciones o acciones después de la inserción si es necesario
+
+            Return True
+        Catch ex As Exception
+            ' Mostrar mensaje de error si algo sale mal en la inserción
+            MessageBox.Show("Error al insertar el contacto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End Try
+    End Function
+
+
 End Class
 
 
