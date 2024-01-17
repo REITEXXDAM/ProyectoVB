@@ -258,6 +258,7 @@ Partial Class AdminPanel
         Me.ClientSize = New System.Drawing.Size(976, 526)
         Me.Controls.Add(Me.panelLayoutPanel)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(992, 565)
         Me.Name = "AdminPanel"
         Me.Text = "ADMINISTRACION DE CONTACTOS"
         Me.panelLayoutPanel.ResumeLayout(False)
