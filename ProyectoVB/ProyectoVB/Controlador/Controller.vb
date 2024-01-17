@@ -115,6 +115,12 @@
             Dim sqliteCommand As New SQLiteCommand()
             sqliteCommand.EliminarContacto(idContacto, conexionBBDD)
 
+            ' Eliminar el contacto de la lista local
+            Dim contactoAEliminar As Contacto = listaContactos.FirstOrDefault(Function(c) c.id = idContacto)
+            If contactoAEliminar IsNot Nothing Then
+                listaContactos.Remove(contactoAEliminar)
+            End If
+
             ' Puedes realizar más validaciones o acciones después de la eliminación si es necesario
 
             Return True

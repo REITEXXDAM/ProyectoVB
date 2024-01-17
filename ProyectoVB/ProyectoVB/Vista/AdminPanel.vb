@@ -2,10 +2,25 @@
     Dim controller As New Controller()
     Dim command As New SQLiteCommand()
     Public listaContactos As New List(Of Contacto)
+    Public listaNombres As New List(Of String)
 
     Private Sub AdminPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Llamada al método para cargar los nombres de contactos en el ComboBox
-        CargarNombresDeContactos()
+        ' Llamar al método en el controlador para consultar los contactos
+        controller.ConsultarContactos(listaContactos)
+
+        ' Limpiar ComboBox antes de cargar los nuevos datos
+        contactoComboBox.Items.Clear()
+
+        ' Limpiar la lista de nombres
+        listaNombres.Clear()
+
+        ' Agregar objetos de Contacto al ComboBox y a la lista de nombres
+        For Each contacto As Contacto In listaContactos
+            If Not listaNombres.Contains(contacto.nombre) Then
+                listaNombres.Add(contacto.nombre)
+                contactoComboBox.Items.Add(contacto.nombre)
+            End If
+        Next
     End Sub
 
     Private Sub contactoComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles contactoComboBox.SelectedIndexChanged
@@ -16,7 +31,6 @@
 
             ' Limpiar los campos antes de cargar nuevos datos
             LimpiarCampos()
-
 
             ' Mostrar los datos en los TextBox correspondientes
             nombreContactoTextBox.Text = contactoSeleccionado.nombre
@@ -35,9 +49,15 @@
             ' Limpiar ComboBox antes de cargar los nuevos datos
             contactoComboBox.Items.Clear()
 
-            ' Agregar objetos de Contacto al ComboBox
+            ' Limpiar la lista de nombres
+            listaNombres.Clear()
+
+            ' Agregar objetos de Contacto al ComboBox y a la lista de nombres
             For Each contacto As Contacto In listaContactos
-                contactoComboBox.Items.Add(contacto.nombre)
+                If Not listaNombres.Contains(contacto.nombre) Then
+                    listaNombres.Add(contacto.nombre)
+                    contactoComboBox.Items.Add(contacto.nombre)
+                End If
             Next
         Catch ex As Exception
             ' Mostrar mensaje de error si algo sale mal al cargar los nombres de contactos
@@ -67,13 +87,11 @@
                 ' Mostrar mensaje de error si la verificación en el controlador falla
                 MessageBox.Show("Error al verificar o insertar el contacto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
-
         Catch ex As Exception
             ' Mostrar mensaje de error si algo sale mal en la recopilación de datos
             MessageBox.Show("Error al recoger datos del formulario: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
 
     Private Sub actualizarButton_Click(sender As Object, e As EventArgs) Handles actualizarButton.Click
         Try
@@ -99,6 +117,9 @@
                     ' Actualizar la lista de contactos
                     listaContactos(indiceSeleccionado) = New Contacto(contactoSeleccionado.id, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail)
 
+                    ' Limpiar los campos del formulario después de la actualización
+                    LimpiarCampos()
+
                     ' Actualizar la lista de nombres en el ComboBox
                     CargarNombresDeContactos()
 
@@ -114,7 +135,6 @@
             MessageBox.Show("Error al actualizar el contacto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
 
     Private Sub eliminarButton_Click(sender As Object, e As EventArgs) Handles eliminarButton.Click
         Try
@@ -134,8 +154,8 @@
                     ' Eliminar el contacto de la lista
                     listaContactos.RemoveAt(indiceSeleccionado)
 
-                    ' Actualizar la lista de nombres en el ComboBox
-                    CargarNombresDeContactos()
+                    ' Quitar el nombre del ComboBox
+                    contactoComboBox.Items.RemoveAt(indiceSeleccionado)
 
                     ' Limpiar los campos del formulario después de la eliminación
                     LimpiarCampos()
@@ -158,3 +178,4 @@
         contactoComboBox.Text = ""
     End Sub
 End Class
+
