@@ -52,6 +52,34 @@ Public Class SQLiteCommand
         End Try
     End Sub
 
+    Public Sub ConsultarContactos(ByVal listaContactos As List(Of Contacto))
+        Try
+            Dim conexion As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
+            Dim consulta As String = "SELECT CODIGO, NOMBRE, APELLIDO, TELEFONO, EMAIL FROM CONTACTO"
+            conexion.Open()
+            Dim cmd As New SQLiteCmd(consulta, conexion)
+            Dim lector As SQLiteDataReader = cmd.ExecuteReader()
+
+            While lector.Read()
+                Dim id As Integer = lector.GetInt32(0)
+                Dim nombre As String = lector.GetString(1)
+                Dim apellido As String = lector.GetString(2)
+                Dim telefono As String = lector.GetString(3)
+                Dim email As String = lector.GetString(4)
+
+
+                ' Crea un nuevo usuario y agrégalo a la lista
+                Dim nuevoContacto As New Contacto(id, nombre, apellido, telefono, email)
+                listaContactos.Add(nuevoContacto)
+            End While
+
+            lector.Close()
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Function ExecuteReader() As SQLiteDataReader
         Throw New NotImplementedException()
     End Function
