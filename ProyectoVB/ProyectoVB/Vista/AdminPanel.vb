@@ -1,6 +1,7 @@
 ﻿Public Class AdminPanel
     Dim controller As New Controller()
     Dim command As New SQLiteCommand()
+    Public listaContactos As New List(Of Contacto)
 
     Private Sub insertarButton_Click(sender As Object, e As EventArgs) Handles insertarButton.Click
         Try
@@ -40,11 +41,24 @@
         CargarNombresDeContactos()
     End Sub
 
+    Private Sub contactoComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles contactoComboBox.SelectedIndexChanged
+        ' Verificar si hay elementos seleccionados en el ComboBox
+        If contactoComboBox.SelectedIndex <> -1 Then
+            ' Obtener el contacto seleccionado
+            Dim contactoSeleccionado As Contacto = listaContactos(contactoComboBox.SelectedIndex)
+
+            ' Mostrar los datos en los TextBox correspondientes
+            nombreContactoTextBox.Text = contactoSeleccionado.nombre
+            apellidoContactoTextBox.Text = contactoSeleccionado.apellido
+            telefonoContactoTextBox.Text = contactoSeleccionado.telefono.ToString()
+            emailContactoTextBox.Text = contactoSeleccionado.email
+        End If
+    End Sub
+
     ' Método para cargar los nombres de los contactos en el ComboBox
     Private Sub CargarNombresDeContactos()
         Try
             ' Llamar al método en el controlador para consultar los contactos
-            Dim listaContactos As New List(Of Contacto)
             controller.ConsultarContactos(listaContactos)
 
             ' Limpiar ComboBox antes de cargar los nuevos datos
