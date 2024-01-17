@@ -52,7 +52,7 @@ Public Class SQLiteCommand
         End Try
     End Sub
 
-    Public Sub ConsultarContactos(ByVal listaContactos As List(Of Contacto))
+    Public Sub ConsultarContactos(ByVal listaContactos As List(Of Contacto), conexionBBDD As MiSQLiteConnection)
         Try
             Dim conexion As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
             Dim consulta As String = "SELECT CODIGO, NOMBRE, APELLIDO, TELEFONO, EMAIL FROM CONTACTO"

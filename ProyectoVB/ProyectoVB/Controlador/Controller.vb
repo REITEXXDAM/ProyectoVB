@@ -1,6 +1,7 @@
 ﻿Public Class Controller
     Dim conexionBBDD As New MiSQLiteConnection()
     Public listaUsuarios As New List(Of Usuario)
+    Public listaContactos As New List(Of Contacto)
 
     Public Function VerificarLogin(ByVal user As String, ByVal password As String) As Boolean
         'VERIFICAMOS SI EL USUARIO Y CONTRASEÑA ESTÁN VACÍOS O NO
@@ -52,6 +53,22 @@
         Catch ex As Exception
             ' Mostrar mensaje de error si algo sale mal en la inserción
             MessageBox.Show("Error al insertar el contacto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End Try
+    End Function
+
+    Public Function ConsultarContactos(ByVal listaContactos As List(Of Contacto)) As Boolean
+        Try
+            ' Llamar al método en SQLiteCommand para consultar los contactos en la base de datos
+            Dim sqliteCommand As New SQLiteCommand()
+            sqliteCommand.ConsultarContactos(listaContactos, conexionBBDD)
+
+            ' Puedes realizar más validaciones o acciones después de la consulta si es necesario
+
+            Return True
+        Catch ex As Exception
+            ' Mostrar mensaje de error si algo sale mal en la consulta
+            MessageBox.Show("Error al consultar los contactos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
         End Try
     End Function
