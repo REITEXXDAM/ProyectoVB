@@ -35,11 +35,33 @@
         Return user.ToLower() = "user" AndAlso password = "user"
     End Function
 
+    Public Function ConsultarContactos(ByVal listaContactos As List(Of Contacto)) As Boolean
+        Try
+            ' Llamar al método en SQLiteCommand para consultar los contactos en la base de datos
+            Dim sqliteCommand As New SQLiteCommand()
+            sqliteCommand.ConsultarContactos(listaContactos, conexionBBDD)
+
+            ' Puedes realizar más validaciones o acciones después de la consulta si es necesario
+
+            Return True
+        Catch ex As Exception
+            ' Mostrar mensaje de error si algo sale mal en la consulta
+            MessageBox.Show("Error al consultar los contactos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End Try
+    End Function
+
     Public Function InsertarContacto(ByVal nombre As String, ByVal apellido As String, ByVal telefono As Integer, ByVal email As String) As Boolean
         Try
-            ' Verificar que los datos sean válidos (puedes agregar más lógica de validación según tus requerimientos)
-            If String.IsNullOrEmpty(nombre) Or String.IsNullOrEmpty(apellido) Or telefono <= 0 Or String.IsNullOrEmpty(email) Then
+            ' Verificar que los datos sean válidos
+            If String.IsNullOrEmpty(nombre) OrElse String.IsNullOrEmpty(apellido) Or telefono <= 0 Or String.IsNullOrEmpty(email) Then
                 MessageBox.Show("Por favor, complete todos los campos correctamente.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return False
+            End If
+
+            ' Verificar si el email ya existe
+            If EmailExiste(email, -1) Then
+                MessageBox.Show("El correo electrónico ya está registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return False
             End If
 
@@ -57,27 +79,19 @@
         End Try
     End Function
 
-    Public Function ConsultarContactos(ByVal listaContactos As List(Of Contacto)) As Boolean
-        Try
-            ' Llamar al método en SQLiteCommand para consultar los contactos en la base de datos
-            Dim sqliteCommand As New SQLiteCommand()
-            sqliteCommand.ConsultarContactos(listaContactos, conexionBBDD)
 
-            ' Puedes realizar más validaciones o acciones después de la consulta si es necesario
-
-            Return True
-        Catch ex As Exception
-            ' Mostrar mensaje de error si algo sale mal en la consulta
-            MessageBox.Show("Error al consultar los contactos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End Try
-    End Function
 
     Public Function ActualizarContacto(ByVal id As Integer, ByVal nuevoNombre As String, ByVal nuevoApellido As String, ByVal nuevoTelefono As Integer, ByVal nuevoEmail As String) As Boolean
         Try
-            ' Verificar que los datos sean válidos (puedes agregar más lógica de validación según tus requerimientos)
+            ' Verificar que los datos sean válidos
             If String.IsNullOrEmpty(nuevoNombre) Or String.IsNullOrEmpty(nuevoApellido) Or nuevoTelefono <= 0 Or String.IsNullOrEmpty(nuevoEmail) Then
                 MessageBox.Show("Por favor, complete todos los campos correctamente.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return False
+            End If
+
+            ' Verificar si el email ya existe
+            If EmailExiste(nuevoEmail, id) Then
+                MessageBox.Show("El correo electrónico ya está registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return False
             End If
 
@@ -111,6 +125,16 @@
         End Try
     End Function
 
+    Private Function EmailExiste(ByVal email As String, ByVal idExcluir As Integer) As Boolean
+        ' Verificar si el correo electrónico ya existe en la base de datos, excluyendo el contacto actual
+        For Each contacto As Contacto In listaContactos
+            If contacto.email.ToLower() = email.ToLower() AndAlso contacto.id <> idExcluir Then
+                Return True
+            End If
+        Next
+
+        Return False
+    End Function
 
 
 End Class

@@ -18,4 +18,16 @@
         Me.telefono = telefono
         Me.email = email
     End Sub
+
+    Public Overrides Function Equals(obj As Object) As Boolean
+        Dim contacto = TryCast(obj, Contacto)
+        Return contacto IsNot Nothing AndAlso
+               email = contacto.email
+    End Function
+
+    Public Overrides Function GetHashCode() As Integer
+        Dim hashCode As Long = -1970842681
+        hashCode = (hashCode * -1521134295 + EqualityComparer(Of String).Default.GetHashCode(email)).GetHashCode()
+        Return hashCode
+    End Function
 End Class

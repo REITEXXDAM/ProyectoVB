@@ -14,6 +14,10 @@
             ' Obtener el contacto seleccionado
             Dim contactoSeleccionado As Contacto = listaContactos(contactoComboBox.SelectedIndex)
 
+            ' Limpiar los campos antes de cargar nuevos datos
+            LimpiarCampos()
+
+
             ' Mostrar los datos en los TextBox correspondientes
             nombreContactoTextBox.Text = contactoSeleccionado.nombre
             apellidoContactoTextBox.Text = contactoSeleccionado.apellido
@@ -28,20 +32,12 @@
             ' Llamar al método en el controlador para consultar los contactos
             controller.ConsultarContactos(listaContactos)
 
-            ' Usar HashSet para evitar duplicados
-            Dim nombresSinDuplicados As New HashSet(Of String)()
-
-            ' Agregar nombres de contactos al HashSet
-            For Each contacto As Contacto In listaContactos
-                nombresSinDuplicados.Add(contacto.nombre)
-            Next
-
             ' Limpiar ComboBox antes de cargar los nuevos datos
             contactoComboBox.Items.Clear()
 
-            ' Agregar nombres sin duplicados al ComboBox
-            For Each nombre As String In nombresSinDuplicados
-                contactoComboBox.Items.Add(nombre)
+            ' Agregar objetos de Contacto al ComboBox
+            For Each contacto As Contacto In listaContactos
+                contactoComboBox.Items.Add(contacto.nombre)
             Next
         Catch ex As Exception
             ' Mostrar mensaje de error si algo sale mal al cargar los nombres de contactos
@@ -79,10 +75,6 @@
     End Sub
 
 
-
-
-
-
     Private Sub actualizarButton_Click(sender As Object, e As EventArgs) Handles actualizarButton.Click
         Try
             ' Obtener el índice seleccionado en el ComboBox
@@ -104,13 +96,14 @@
                     ' Mostrar mensaje de éxito
                     MessageBox.Show("Contacto actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    contactoComboBox.Text = ""
-
                     ' Actualizar la lista de contactos
                     listaContactos(indiceSeleccionado) = New Contacto(contactoSeleccionado.id, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail)
 
                     ' Actualizar la lista de nombres en el ComboBox
                     CargarNombresDeContactos()
+
+                    ' Establecer la selección del ComboBox en -1
+                    contactoComboBox.SelectedIndex = -1
                 Else
                     ' Mostrar mensaje de error si la actualización en el controlador falla
                     MessageBox.Show("Error al actualizar el contacto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -121,6 +114,7 @@
             MessageBox.Show("Error al actualizar el contacto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 
     Private Sub eliminarButton_Click(sender As Object, e As EventArgs) Handles eliminarButton.Click
         Try
