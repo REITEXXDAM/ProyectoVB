@@ -95,6 +95,22 @@
         End Try
     End Function
 
+    Public Function EliminarContacto(ByVal idContacto As Integer) As Boolean
+        Try
+            ' Llamar al método en SQLiteCommand para eliminar el contacto en la base de datos
+            Dim sqliteCommand As New SQLiteCommand()
+            sqliteCommand.EliminarContacto(idContacto, conexionBBDD)
+
+            ' Puedes realizar más validaciones o acciones después de la eliminación si es necesario
+
+            Return True
+        Catch ex As Exception
+            ' Mostrar mensaje de error si algo sale mal en la eliminación
+            MessageBox.Show("Error al eliminar el contacto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End Try
+    End Function
+
 
 
 End Class

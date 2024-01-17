@@ -28,6 +28,34 @@ Public Class SQLiteCommand
         End Try
     End Sub
 
+    Public Sub ConsultarContactos(ByVal listaContactos As List(Of Contacto), conexionBBDD As MiSQLiteConnection)
+        Try
+            Dim conexion As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
+            Dim consulta As String = "SELECT CODIGO, NOMBRE, APELLIDO, TELEFONO, EMAIL FROM CONTACTO"
+            conexion.Open()
+            Dim cmd As New SQLiteCmd(consulta, conexion)
+            Dim lector As SQLiteDataReader = cmd.ExecuteReader()
+
+            While lector.Read()
+                Dim id As Integer = lector.GetInt32(0)
+                Dim nombre As String = lector.GetString(1)
+                Dim apellido As String = lector.GetString(2)
+                Dim telefono As String = lector.GetString(3)
+                Dim email As String = lector.GetString(4)
+
+
+                ' Crea un nuevo usuario y agrégalo a la lista
+                Dim nuevoContacto As New Contacto(id, nombre, apellido, telefono, email)
+                listaContactos.Add(nuevoContacto)
+            End While
+
+            lector.Close()
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Public Sub InsertarContacto(ByVal nombre As String, ByVal apellido As String, ByVal telefono As Integer, ByVal email As String, ByVal conexion As MiSQLiteConnection)
         Try
             Using conexionSQLite As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
@@ -77,34 +105,29 @@ Public Class SQLiteCommand
         End Try
     End Sub
 
-
-    Public Sub ConsultarContactos(ByVal listaContactos As List(Of Contacto), conexionBBDD As MiSQLiteConnection)
+    Public Sub EliminarContacto(ByVal idContacto As Integer, ByVal conexion As MiSQLiteConnection)
         Try
-            Dim conexion As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
-            Dim consulta As String = "SELECT CODIGO, NOMBRE, APELLIDO, TELEFONO, EMAIL FROM CONTACTO"
-            conexion.Open()
-            Dim cmd As New SQLiteCmd(consulta, conexion)
-            Dim lector As SQLiteDataReader = cmd.ExecuteReader()
+            Using conexionSQLite As SQLiteConnection = New SQLiteConnection(My.Settings.conexion)
+                Dim consulta As String = "DELETE FROM CONTACTO WHERE CODIGO = @idContacto"
+                conexionSQLite.Open()
+                Using cmd As New SQLiteCmd(consulta, conexionSQLite)
+                    ' Asignar parámetros con el valor del ID del contacto a eliminar
+                    cmd.Parameters.AddWithValue("@idContacto", idContacto)
 
-            While lector.Read()
-                Dim id As Integer = lector.GetInt32(0)
-                Dim nombre As String = lector.GetString(1)
-                Dim apellido As String = lector.GetString(2)
-                Dim telefono As String = lector.GetString(3)
-                Dim email As String = lector.GetString(4)
-
-
-                ' Crea un nuevo usuario y agrégalo a la lista
-                Dim nuevoContacto As New Contacto(id, nombre, apellido, telefono, email)
-                listaContactos.Add(nuevoContacto)
-            End While
-
-            lector.Close()
-            conexion.Close()
+                    ' Ejecutar la consulta
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            ' Asegurarse de cerrar la conexión después de usarla
+            conexion.CerrarConexion()
         End Try
     End Sub
+
+
+
 
 
 

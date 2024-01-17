@@ -3,39 +3,6 @@
     Dim command As New SQLiteCommand()
     Public listaContactos As New List(Of Contacto)
 
-    Private Sub insertarButton_Click(sender As Object, e As EventArgs) Handles insertarButton.Click
-        Try
-            ' Recoger los datos del formulario
-            Dim nombre As String = nombreContactoTextBox.Text
-            Dim apellido As String = apellidoContactoTextBox.Text
-            Dim telefono As Integer = Convert.ToInt32(telefonoContactoTextBox.Text)
-            Dim email As String = emailContactoTextBox.Text
-
-            ' Llamar al método en el controlador para verificar y realizar la inserción
-            If controller.InsertarContacto(nombre, apellido, telefono, email) Then
-                ' Mostrar mensaje de éxito
-                MessageBox.Show("Contacto insertado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-                ' Limpiar los campos del formulario después de la inserción
-                LimpiarCampos()
-            Else
-                ' Mostrar mensaje de error si la verificación en el controlador falla
-                MessageBox.Show("Error al verificar o insertar el contacto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-
-        Catch ex As Exception
-            ' Mostrar mensaje de error si algo sale mal en la recopilación de datos
-            MessageBox.Show("Error al recoger datos del formulario: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
-    Private Sub LimpiarCampos()
-        nombreContactoTextBox.Text = ""
-        apellidoContactoTextBox.Text = ""
-        telefonoContactoTextBox.Text = ""
-        emailContactoTextBox.Text = ""
-    End Sub
-
     Private Sub AdminPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Llamada al método para cargar los nombres de contactos en el ComboBox
         CargarNombresDeContactos()
@@ -82,6 +49,38 @@
         End Try
     End Sub
 
+    Private Sub insertarButton_Click(sender As Object, e As EventArgs) Handles insertarButton.Click
+        Try
+            ' Recoger los datos del formulario
+            Dim nombre As String = nombreContactoTextBox.Text
+            Dim apellido As String = apellidoContactoTextBox.Text
+            Dim telefono As Integer = Convert.ToInt32(telefonoContactoTextBox.Text)
+            Dim email As String = emailContactoTextBox.Text
+
+            ' Llamar al método en el controlador para verificar y realizar la inserción
+            If controller.InsertarContacto(nombre, apellido, telefono, email) Then
+                ' Mostrar mensaje de éxito
+                MessageBox.Show("Contacto insertado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ' Limpiar los campos del formulario después de la inserción
+                LimpiarCampos()
+
+                ' Recarga de datos en el comboBox
+                CargarNombresDeContactos()
+            Else
+                ' Mostrar mensaje de error si la verificación en el controlador falla
+                MessageBox.Show("Error al verificar o insertar el contacto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
+        Catch ex As Exception
+            ' Mostrar mensaje de error si algo sale mal en la recopilación de datos
+            MessageBox.Show("Error al recoger datos del formulario: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
+
+
 
 
     Private Sub actualizarButton_Click(sender As Object, e As EventArgs) Handles actualizarButton.Click
@@ -105,6 +104,8 @@
                     ' Mostrar mensaje de éxito
                     MessageBox.Show("Contacto actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+                    contactoComboBox.Text = ""
+
                     ' Actualizar la lista de contactos
                     listaContactos(indiceSeleccionado) = New Contacto(contactoSeleccionado.id, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail)
 
@@ -122,6 +123,44 @@
     End Sub
 
     Private Sub eliminarButton_Click(sender As Object, e As EventArgs) Handles eliminarButton.Click
+        Try
+            ' Obtener el índice seleccionado en el ComboBox
+            Dim indiceSeleccionado As Integer = contactoComboBox.SelectedIndex
 
+            ' Verificar si hay elementos seleccionados en el ComboBox
+            If indiceSeleccionado <> -1 Then
+                ' Obtener el contacto seleccionado
+                Dim contactoSeleccionado As Contacto = listaContactos(indiceSeleccionado)
+
+                ' Llamar al método en el controlador para eliminar el contacto
+                If controller.EliminarContacto(contactoSeleccionado.id) Then
+                    ' Mostrar mensaje de éxito
+                    MessageBox.Show("Contacto eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' Eliminar el contacto de la lista
+                    listaContactos.RemoveAt(indiceSeleccionado)
+
+                    ' Actualizar la lista de nombres en el ComboBox
+                    CargarNombresDeContactos()
+
+                    ' Limpiar los campos del formulario después de la eliminación
+                    LimpiarCampos()
+                Else
+                    ' Mostrar mensaje de error si la eliminación en el controlador falla
+                    MessageBox.Show("Error al eliminar el contacto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        Catch ex As Exception
+            ' Mostrar mensaje de error si algo sale mal
+            MessageBox.Show("Error al eliminar el contacto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub LimpiarCampos()
+        nombreContactoTextBox.Text = ""
+        apellidoContactoTextBox.Text = ""
+        telefonoContactoTextBox.Text = ""
+        emailContactoTextBox.Text = ""
+        contactoComboBox.Text = ""
     End Sub
 End Class
