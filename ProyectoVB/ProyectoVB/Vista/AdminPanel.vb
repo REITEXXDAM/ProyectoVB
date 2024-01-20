@@ -177,5 +177,9 @@
         emailContactoTextBox.Text = ""
         contactoComboBox.Text = ""
     End Sub
+
+    Private Sub telefonoContactoTextBox_TextChanged(sender As Object, e As EventArgs) Handles telefonoContactoTextBox.TextChanged
+
+    End Sub
 End Class
 

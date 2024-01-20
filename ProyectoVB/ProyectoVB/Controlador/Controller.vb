@@ -25,13 +25,11 @@
 
     Public Function UsuarioEsAdmin(ByVal user As String, ByVal password As String) As Boolean
         ' Lógica para determinar si el usuario es un administrador
-        ' Puedes cambiar esto según tu implementación específica
         Return user.ToLower() = "admin" AndAlso password = "admin"
     End Function
 
     Public Function UsuarioEsUser(ByVal user As String, ByVal password As String) As Boolean
         ' Lógica para determinar si el usuario es un usuario normal
-        ' Puedes cambiar esto según tu implementación específica
         Return user.ToLower() = "user" AndAlso password = "user"
     End Function
 
@@ -40,8 +38,6 @@
             ' Llamar al método en SQLiteCommand para consultar los contactos en la base de datos
             Dim sqliteCommand As New SQLiteCommand()
             sqliteCommand.ConsultarContactos(listaContactos, conexionBBDD)
-
-            ' Puedes realizar más validaciones o acciones después de la consulta si es necesario
 
             Return True
         Catch ex As Exception
@@ -99,8 +95,6 @@
             Dim sqliteCommand As New SQLiteCommand()
             sqliteCommand.ActualizarContacto(id, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail, conexionBBDD)
 
-            ' Puedes realizar más validaciones o acciones después de la actualización si es necesario
-
             Return True
         Catch ex As Exception
             ' Mostrar mensaje de error si algo sale mal en la actualización
@@ -120,8 +114,6 @@
             If contactoAEliminar IsNot Nothing Then
                 listaContactos.Remove(contactoAEliminar)
             End If
-
-            ' Puedes realizar más validaciones o acciones después de la eliminación si es necesario
 
             Return True
         Catch ex As Exception
