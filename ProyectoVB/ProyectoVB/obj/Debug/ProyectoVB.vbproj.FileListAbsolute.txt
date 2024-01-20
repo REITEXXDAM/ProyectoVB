@@ -65,3 +65,4 @@ C:\Users\RETEXDEV\Desktop\REPOS\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\Entit
 C:\Users\RETEXDEV\Desktop\REPOS\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\RETEXDEV\Desktop\REPOS\ProyectoVB\ProyectoVB\ProyectoVB\bin\Debug\System.Data.SQLite.xml
 C:\Users\RETEXDEV\Desktop\REPOS\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.vbproj.CopyComplete
+C:\Users\RETEXDEV\Desktop\REPOS\ProyectoVB\ProyectoVB\ProyectoVB\obj\Debug\ProyectoVB.UserControl1.resources

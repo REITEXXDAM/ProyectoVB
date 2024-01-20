@@ -1,75 +1,81 @@
 ﻿Public Class UserControl1
-    Private _nombre As String
-    Private _Apellido As String
-    Private _telefono As Integer
-    Private _email As String
-    Private _activoLabel As String
-    Private __fichaTitulo As String
     Private _MinimumSize As Size 'INSTANCIAMOS LA VARIABLE PARA AJUSTAR EL TAMAÑO MINIMO
 
     Public Event ClickBoton()
 
+    Public Sub New()
+        InitializeComponent()
 
-    Public Overrides Property MinimumSize As Size 'ESTABLECEMOS EL TAMAÑO MINIMO, SIN QUE SE PUEDA MODIFICAR
-        Get
-            Return MyBase.MinimumSize
-        End Get
-        Set(value As Size)
-            MyBase.MinimumSize = New Size(1065, 775)
-        End Set
-    End Property
+        ' Configuraciones adicionales
+        Me.MinimumSize = New Size(640, 349)
+        Me.AutoSize = True
+    End Sub
 
     'CREAMOS LAS VARIABLES PARA LOS LABELS
     Property _fichaTitulo As String
         Get
             Return tituloLabel.Text
         End Get
-        Set
-            tituloLabel.Text = Value
+        Set(value As String)
+            tituloLabel.Text = value
         End Set
     End Property
+
     Property nombre As String
         Get
-            Return nombreLabel.Text
+            Return nombreTextBox.Text
         End Get
-        Set
-            nombreLabel.Text = Value
+        Set(value As String)
+            nombreTextBox.Text = value
         End Set
     End Property
 
     Property apellido As String
         Get
-            Return apellidoLabel.Text
+            Return apellidoTextBox.Text
         End Get
-        Set
-            apellidoLabel.Text = Value
+        Set(value As String)
+            apellidoTextBox.Text = value
         End Set
     End Property
 
-
     Property telefono As Integer
         Get
-            Return telefonoLabel.Text.ToString
+            Return Integer.Parse(telefonoTextBox.Text)
         End Get
-        Set
-            telefonoLabel.Text = Value
+        Set(value As Integer)
+            telefonoTextBox.Text = value.ToString()
         End Set
     End Property
 
     Property email As String
         Get
-            Return emailLabel.Text
+            Return emailTextBox.Text
         End Get
-        Set
-            emailLabel.Text = Value
+        Set(value As String)
+            emailTextBox.Text = value
         End Set
     End Property
 
     Private Sub llamarButton_Click(sender As Object, e As EventArgs) Handles llamarButton.Click
-        RaiseEvent ClickBoton()
+        ' Obtener el número de teléfono
+        Dim numeroTelefono As String = telefonoTextBox.Text
+
+        ' Mostrar mensaje indicando que se está llamando al número
+        MessageBox.Show("Llamando al número: " & numeroTelefono, "Llamada", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub emailButton_Click(sender As Object, e As EventArgs) Handles emailButton.Click
-        RaiseEvent ClickBoton()
+        ' Obtener la dirección de correo electrónico
+        Dim direccionEmail As String = emailTextBox.Text
+
+        ' Mostrar mensaje indicando que se está enviando un correo electrónico
+        MessageBox.Show("Enviando correo electrónico a: " & direccionEmail, "Correo Electrónico", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub fichaEmpleadoLayoutPanel_Paint(sender As Object, e As PaintEventArgs) Handles fichaEmpleadoLayoutPanel.Paint
+
     End Sub
 End Class
+
+

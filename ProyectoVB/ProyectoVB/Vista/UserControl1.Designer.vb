@@ -59,7 +59,6 @@ Partial Class UserControl1
         Me.fichaEmpleadoLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.fichaEmpleadoLayoutPanel.Location = New System.Drawing.Point(0, 0)
         Me.fichaEmpleadoLayoutPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.fichaEmpleadoLayoutPanel.MinimumSize = New System.Drawing.Size(532, 403)
         Me.fichaEmpleadoLayoutPanel.Name = "fichaEmpleadoLayoutPanel"
         Me.fichaEmpleadoLayoutPanel.Padding = New System.Windows.Forms.Padding(12, 13, 12, 13)
         Me.fichaEmpleadoLayoutPanel.RowCount = 6

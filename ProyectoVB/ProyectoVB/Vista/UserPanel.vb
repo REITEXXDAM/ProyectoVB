@@ -26,5 +26,40 @@
         End Try
     End Sub
 
-    ' Resto del código...
+    Private Sub controlUserButton_Click(sender As Object, e As EventArgs) Handles controlUserButton.Click
+        ' Verificar si hay elementos seleccionados en el ComboBox
+        If contactoComboBox.SelectedIndex <> -1 Then
+            ' Obtener el contacto seleccionado
+            Dim contactoSeleccionado As Contacto = listaContactos(contactoComboBox.SelectedIndex)
+
+            ' Crear instancia de UserControl1
+            Dim userControl As New UserControl1()
+
+            ' Establecer los datos del contacto en UserControl1
+            userControl._fichaTitulo = "Información de Contacto"
+            userControl.nombreTextBox.Text = contactoSeleccionado.nombre
+            userControl.apellidoTextBox.Text = contactoSeleccionado.apellido
+            userControl.telefonoTextBox.Text = contactoSeleccionado.telefono.ToString()
+            userControl.emailTextBox.Text = contactoSeleccionado.email
+
+            ' Mostrar UserControl1
+            MostrarUserControl(userControl)
+        End If
+    End Sub
+
+    ' Método para mostrar UserControl1 en el panel
+    Private Sub MostrarUserControl(userControl As UserControl1)
+        ' Limpiar el panel antes de agregar el UserControl
+        panelLayoutPanel.Controls.Clear()
+
+        ' Añadir UserControl1 al panel
+        panelLayoutPanel.Controls.Add(userControl)
+        userControl.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub panelLayoutPanel_Paint(sender As Object, e As PaintEventArgs) Handles panelLayoutPanel.Paint
+
+    End Sub
 End Class
+
+
