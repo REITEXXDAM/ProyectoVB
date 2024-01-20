@@ -49,7 +49,7 @@ Partial Class Login
         Me.principalLayoutPanel.Controls.Add(Me.datosLayoutPanel, 1, 1)
         Me.principalLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.principalLayoutPanel.Location = New System.Drawing.Point(0, 0)
-        Me.principalLayoutPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.principalLayoutPanel.Margin = New System.Windows.Forms.Padding(2)
         Me.principalLayoutPanel.Name = "principalLayoutPanel"
         Me.principalLayoutPanel.RowCount = 5
         Me.principalLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
@@ -57,19 +57,22 @@ Partial Class Login
         Me.principalLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.principalLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.principalLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.principalLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38.0!))
-        Me.principalLayoutPanel.Size = New System.Drawing.Size(1238, 627)
+        Me.principalLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.principalLayoutPanel.Size = New System.Drawing.Size(619, 326)
         Me.principalLayoutPanel.TabIndex = 0
         Me.principalLayoutPanel.Tag = ""
         '
         'agendaBox
         '
+        Me.agendaBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.agendaBox.Image = Global.ProyectoVB.My.Resources.Resources.agenda
-        Me.agendaBox.Location = New System.Drawing.Point(4, 129)
-        Me.agendaBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.agendaBox.Location = New System.Drawing.Point(2, 67)
+        Me.agendaBox.Margin = New System.Windows.Forms.Padding(2)
         Me.agendaBox.Name = "agendaBox"
         Me.principalLayoutPanel.SetRowSpan(Me.agendaBox, 2)
-        Me.agendaBox.Size = New System.Drawing.Size(570, 242)
+        Me.agendaBox.Size = New System.Drawing.Size(285, 126)
         Me.agendaBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.agendaBox.TabIndex = 0
         Me.agendaBox.TabStop = False
@@ -78,12 +81,12 @@ Partial Class Login
         '
         Me.agendaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.agendaLabel.AutoSize = True
-        Me.agendaLabel.Font = New System.Drawing.Font("Modern No. 20", 25.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.agendaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agendaLabel.ForeColor = System.Drawing.SystemColors.Window
-        Me.agendaLabel.Location = New System.Drawing.Point(129, 27)
-        Me.agendaLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.agendaLabel.Location = New System.Drawing.Point(63, 13)
+        Me.agendaLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.agendaLabel.Name = "agendaLabel"
-        Me.agendaLabel.Size = New System.Drawing.Size(319, 71)
+        Me.agendaLabel.Size = New System.Drawing.Size(163, 39)
         Me.agendaLabel.TabIndex = 1
         Me.agendaLabel.Text = "AGENDA"
         '
@@ -91,13 +94,13 @@ Partial Class Login
         '
         Me.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.loginButton.BackColor = System.Drawing.Color.BlueViolet
-        Me.loginButton.Font = New System.Drawing.Font("Modern No. 20", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.loginButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginButton.ForeColor = System.Drawing.SystemColors.Window
-        Me.loginButton.Location = New System.Drawing.Point(770, 463)
-        Me.loginButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.loginButton.Location = New System.Drawing.Point(366, 241)
+        Me.loginButton.Margin = New System.Windows.Forms.Padding(2)
         Me.loginButton.Name = "loginButton"
         Me.principalLayoutPanel.SetRowSpan(Me.loginButton, 2)
-        Me.loginButton.Size = New System.Drawing.Size(276, 75)
+        Me.loginButton.Size = New System.Drawing.Size(176, 39)
         Me.loginButton.TabIndex = 5
         Me.loginButton.Text = "Login"
         Me.loginButton.UseVisualStyleBackColor = False
@@ -105,74 +108,80 @@ Partial Class Login
         'datosLayoutPanel
         '
         Me.datosLayoutPanel.AccessibleDescription = ""
+        Me.datosLayoutPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.datosLayoutPanel.ColumnCount = 1
         Me.datosLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.datosLayoutPanel.Controls.Add(Me.passwordGroupBox, 0, 1)
         Me.datosLayoutPanel.Controls.Add(Me.nameGroupBox, 0, 0)
-        Me.datosLayoutPanel.Location = New System.Drawing.Point(584, 131)
-        Me.datosLayoutPanel.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.datosLayoutPanel.Location = New System.Drawing.Point(292, 68)
         Me.datosLayoutPanel.Name = "datosLayoutPanel"
         Me.datosLayoutPanel.RowCount = 2
         Me.principalLayoutPanel.SetRowSpan(Me.datosLayoutPanel, 2)
         Me.datosLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.datosLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.datosLayoutPanel.Size = New System.Drawing.Size(614, 238)
+        Me.datosLayoutPanel.Size = New System.Drawing.Size(324, 124)
         Me.datosLayoutPanel.TabIndex = 8
         '
         'passwordGroupBox
         '
+        Me.passwordGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.passwordGroupBox.Controls.Add(Me.passwordTextBox)
-        Me.passwordGroupBox.Font = New System.Drawing.Font("Modern No. 20", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.passwordGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.passwordGroupBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.passwordGroupBox.Location = New System.Drawing.Point(4, 123)
-        Me.passwordGroupBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.passwordGroupBox.Location = New System.Drawing.Point(2, 64)
+        Me.passwordGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.passwordGroupBox.Name = "passwordGroupBox"
-        Me.passwordGroupBox.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.passwordGroupBox.Size = New System.Drawing.Size(600, 110)
+        Me.passwordGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.passwordGroupBox.Size = New System.Drawing.Size(320, 58)
         Me.passwordGroupBox.TabIndex = 10
         Me.passwordGroupBox.TabStop = False
         Me.passwordGroupBox.Text = "Password"
         '
         'passwordTextBox
         '
-        Me.passwordTextBox.Location = New System.Drawing.Point(96, 48)
-        Me.passwordTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.passwordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.passwordTextBox.Location = New System.Drawing.Point(48, 25)
+        Me.passwordTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.passwordTextBox.Name = "passwordTextBox"
-        Me.passwordTextBox.Size = New System.Drawing.Size(440, 47)
+        Me.passwordTextBox.Size = New System.Drawing.Size(222, 28)
         Me.passwordTextBox.TabIndex = 0
         '
         'nameGroupBox
         '
+        Me.nameGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nameGroupBox.Controls.Add(Me.userTextBox)
-        Me.nameGroupBox.Font = New System.Drawing.Font("Modern No. 20", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nameGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nameGroupBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.nameGroupBox.Location = New System.Drawing.Point(4, 4)
-        Me.nameGroupBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.nameGroupBox.Location = New System.Drawing.Point(2, 2)
+        Me.nameGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.nameGroupBox.Name = "nameGroupBox"
-        Me.nameGroupBox.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.nameGroupBox.Size = New System.Drawing.Size(600, 111)
+        Me.nameGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.nameGroupBox.Size = New System.Drawing.Size(320, 58)
         Me.nameGroupBox.TabIndex = 7
         Me.nameGroupBox.TabStop = False
         Me.nameGroupBox.Text = "User"
         '
         'userTextBox
         '
-        Me.userTextBox.Location = New System.Drawing.Point(96, 46)
-        Me.userTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.userTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.userTextBox.Location = New System.Drawing.Point(48, 24)
+        Me.userTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.userTextBox.Name = "userTextBox"
-        Me.userTextBox.Size = New System.Drawing.Size(440, 47)
+        Me.userTextBox.Size = New System.Drawing.Size(222, 28)
         Me.userTextBox.TabIndex = 1
         '
         'Login
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
-        Me.ClientSize = New System.Drawing.Size(1238, 627)
+        Me.ClientSize = New System.Drawing.Size(619, 326)
         Me.Controls.Add(Me.principalLayoutPanel)
         Me.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.MinimumSize = New System.Drawing.Size(1244, 636)
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(630, 349)
         Me.Name = "Login"
         Me.Text = "ACCESO | AGENDA"
         Me.principalLayoutPanel.ResumeLayout(False)
