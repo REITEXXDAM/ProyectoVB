@@ -96,11 +96,11 @@ Partial Class Login
         Me.loginButton.BackColor = System.Drawing.Color.BlueViolet
         Me.loginButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginButton.ForeColor = System.Drawing.SystemColors.Window
-        Me.loginButton.Location = New System.Drawing.Point(366, 241)
-        Me.loginButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.loginButton.Location = New System.Drawing.Point(382, 240)
+        Me.loginButton.Margin = New System.Windows.Forms.Padding(45)
         Me.loginButton.Name = "loginButton"
         Me.principalLayoutPanel.SetRowSpan(Me.loginButton, 2)
-        Me.loginButton.Size = New System.Drawing.Size(176, 39)
+        Me.loginButton.Size = New System.Drawing.Size(143, 41)
         Me.loginButton.TabIndex = 5
         Me.loginButton.Text = "Login"
         Me.loginButton.UseVisualStyleBackColor = False
@@ -141,11 +141,11 @@ Partial Class Login
         '
         'passwordTextBox
         '
-        Me.passwordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.passwordTextBox.Location = New System.Drawing.Point(48, 25)
+        Me.passwordTextBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.passwordTextBox.Location = New System.Drawing.Point(2, 23)
         Me.passwordTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.passwordTextBox.Name = "passwordTextBox"
-        Me.passwordTextBox.Size = New System.Drawing.Size(222, 28)
+        Me.passwordTextBox.Size = New System.Drawing.Size(316, 28)
         Me.passwordTextBox.TabIndex = 0
         '
         'nameGroupBox
@@ -165,11 +165,11 @@ Partial Class Login
         '
         'userTextBox
         '
-        Me.userTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.userTextBox.Location = New System.Drawing.Point(48, 24)
+        Me.userTextBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.userTextBox.Location = New System.Drawing.Point(2, 23)
         Me.userTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.userTextBox.Name = "userTextBox"
-        Me.userTextBox.Size = New System.Drawing.Size(222, 28)
+        Me.userTextBox.Size = New System.Drawing.Size(316, 28)
         Me.userTextBox.TabIndex = 1
         '
         'Login
