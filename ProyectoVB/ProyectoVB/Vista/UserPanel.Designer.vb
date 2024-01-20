@@ -86,20 +86,22 @@ Partial Class UserPanel
         Me.contactoGroupBox.Controls.Add(Me.contactoComboBox)
         Me.contactoGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.contactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.contactoGroupBox.Location = New System.Drawing.Point(88, 118)
+        Me.contactoGroupBox.Location = New System.Drawing.Point(92, 118)
         Me.contactoGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.contactoGroupBox.Name = "contactoGroupBox"
         Me.contactoGroupBox.Padding = New System.Windows.Forms.Padding(2)
-        Me.contactoGroupBox.Size = New System.Drawing.Size(315, 112)
+        Me.contactoGroupBox.Size = New System.Drawing.Size(306, 112)
         Me.contactoGroupBox.TabIndex = 19
         Me.contactoGroupBox.TabStop = False
         Me.contactoGroupBox.Text = "Contacto"
         '
         'contactoComboBox
         '
-        Me.contactoComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.contactoComboBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.contactoComboBox.FormattingEnabled = True
-        Me.contactoComboBox.Location = New System.Drawing.Point(63, 46)
+        Me.contactoComboBox.Location = New System.Drawing.Point(61, 47)
         Me.contactoComboBox.Margin = New System.Windows.Forms.Padding(2)
         Me.contactoComboBox.Name = "contactoComboBox"
         Me.contactoComboBox.Size = New System.Drawing.Size(188, 30)

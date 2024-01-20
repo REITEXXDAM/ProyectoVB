@@ -184,6 +184,7 @@ Partial Class AdminPanel
         '
         'agendaBox
         '
+        Me.agendaBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.agendaBox.Image = Global.ProyectoVB.My.Resources.Resources.agenda
         Me.agendaBox.Location = New System.Drawing.Point(752, 2)
         Me.agendaBox.Margin = New System.Windows.Forms.Padding(2)
@@ -228,10 +229,11 @@ Partial Class AdminPanel
         '
         'contactoGroupBox
         '
+        Me.contactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.contactoGroupBox.Controls.Add(Me.contactoComboBox)
         Me.contactoGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.contactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
-        Me.contactoGroupBox.Location = New System.Drawing.Point(752, 107)
+        Me.contactoGroupBox.Location = New System.Drawing.Point(754, 107)
         Me.contactoGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.contactoGroupBox.Name = "contactoGroupBox"
         Me.contactoGroupBox.Padding = New System.Windows.Forms.Padding(2)

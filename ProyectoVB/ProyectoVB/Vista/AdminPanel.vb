@@ -4,7 +4,16 @@
     Public listaContactos As New List(Of Contacto)
     Public listaNombres As New List(Of String)
 
+    ' Variable para almacenar el tamaño anterior del formulario
+    Private tamañoAnterior As Size
+
     Private Sub AdminPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Inicializamos el tamaño anterior
+        tamañoAnterior = Me.Size
+
+        ' Llamamos a la función para ajustar el tamaño
+        AjustarTamaño()
+
         ' Llamar al método en el controlador para consultar los contactos
         controller.ConsultarContactos(listaContactos)
 
@@ -181,5 +190,52 @@
     Private Sub telefonoContactoTextBox_TextChanged(sender As Object, e As EventArgs) Handles telefonoContactoTextBox.TextChanged
 
     End Sub
+
+    Private Sub panelLayoutPanel_Paint(sender As Object, e As PaintEventArgs) Handles panelLayoutPanel.Paint
+
+    End Sub
+
+    Private Sub AdminPanel_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        ' Llamamos a la función para ajustar el tamaño
+        AjustarTamaño()
+        ' Actualizamos el tamaño anterior después de haber ajustado el tamaño
+        tamañoAnterior = Me.Size
+    End Sub
+
+    Private Sub AjustarTamaño()
+        ' Tamaños de fuente específicos
+        Dim tamFuenteAgenda As Double = 25 * Me.Height / 565
+        tamFuenteAgenda = If(tamFuenteAgenda < 25, 25, tamFuenteAgenda)
+
+        Dim tamFuenteGeneral As Double = 13 * Me.Height / 565
+        tamFuenteGeneral = If(tamFuenteGeneral < 13, 13, tamFuenteGeneral)
+
+        ' Aplicar tamaños de fuente
+        agendaLabel.Font = New Font("Microsoft Sans Serif", CSng(tamFuenteAgenda), FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+
+        ' Aplicar tamaños de fuente a todos los elementos del formulario
+        For Each control As Control In Controls
+            If TypeOf control Is GroupBox Then
+                control.Font = New Font("Microsoft Sans Serif", CSng(tamFuenteGeneral), FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                For Each innerControl As Control In control.Controls
+                    innerControl.Font = New Font("Microsoft Sans Serif", CSng(tamFuenteGeneral), FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+                Next
+            ElseIf TypeOf control Is TextBox OrElse TypeOf control Is Button Then
+                control.Font = New Font("Microsoft Sans Serif", CSng(tamFuenteGeneral), FontStyle.Regular, GraphicsUnit.Point, CType(0, Byte))
+            End If
+        Next
+
+        ' Ajustar tamaño de TextBox
+        For Each control As Control In panelLayoutPanel.Controls
+            If TypeOf control Is TextBox Then
+                Dim nuevoAncho As Integer = CInt(control.Width * (Me.Width / tamañoAnterior.Width))
+                Dim nuevoAlto As Integer = CInt(control.Height * (Me.Height / tamañoAnterior.Height))
+
+                control.Width = If(nuevoAncho < 0, 0, nuevoAncho)
+                control.Height = If(nuevoAlto < 0, 0, nuevoAlto)
+            End If
+        Next
+    End Sub
 End Class
+
 
