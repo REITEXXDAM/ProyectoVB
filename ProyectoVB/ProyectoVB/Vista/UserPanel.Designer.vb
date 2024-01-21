@@ -110,6 +110,7 @@ Partial Class UserPanel
         'controlUserButton
         '
         Me.controlUserButton.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.controlUserButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.controlUserButton.Location = New System.Drawing.Point(505, 150)
         Me.controlUserButton.Margin = New System.Windows.Forms.Padding(2)
         Me.controlUserButton.Name = "controlUserButton"
