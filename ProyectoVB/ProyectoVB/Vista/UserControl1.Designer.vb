@@ -41,7 +41,7 @@ Partial Class UserControl1
         '
         'fichaEmpleadoLayoutPanel
         '
-        Me.fichaEmpleadoLayoutPanel.BackColor = System.Drawing.SystemColors.Highlight
+        Me.fichaEmpleadoLayoutPanel.BackColor = System.Drawing.Color.CornflowerBlue
         Me.fichaEmpleadoLayoutPanel.ColumnCount = 3
         Me.fichaEmpleadoLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
         Me.fichaEmpleadoLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -103,11 +103,11 @@ Partial Class UserControl1
         '
         Me.nombreLabel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.nombreLabel.AutoSize = True
-        Me.nombreLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.nombreLabel.Location = New System.Drawing.Point(79, 96)
+        Me.nombreLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nombreLabel.Location = New System.Drawing.Point(72, 96)
         Me.nombreLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.nombreLabel.Name = "nombreLabel"
-        Me.nombreLabel.Size = New System.Drawing.Size(83, 20)
+        Me.nombreLabel.Size = New System.Drawing.Size(90, 20)
         Me.nombreLabel.TabIndex = 0
         Me.nombreLabel.Text = "NOMBRE:"
         '
@@ -115,11 +115,11 @@ Partial Class UserControl1
         '
         Me.apellidoLabel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.apellidoLabel.AutoSize = True
-        Me.apellidoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.apellidoLabel.Location = New System.Drawing.Point(66, 158)
+        Me.apellidoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.apellidoLabel.Location = New System.Drawing.Point(56, 158)
         Me.apellidoLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.apellidoLabel.Name = "apellidoLabel"
-        Me.apellidoLabel.Size = New System.Drawing.Size(96, 20)
+        Me.apellidoLabel.Size = New System.Drawing.Size(106, 20)
         Me.apellidoLabel.TabIndex = 1
         Me.apellidoLabel.Text = "APELLIDO: "
         '
@@ -127,11 +127,11 @@ Partial Class UserControl1
         '
         Me.telefonoLabel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.telefonoLabel.AutoSize = True
-        Me.telefonoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.telefonoLabel.Location = New System.Drawing.Point(64, 220)
+        Me.telefonoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.telefonoLabel.Location = New System.Drawing.Point(55, 220)
         Me.telefonoLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.telefonoLabel.Name = "telefonoLabel"
-        Me.telefonoLabel.Size = New System.Drawing.Size(98, 20)
+        Me.telefonoLabel.Size = New System.Drawing.Size(107, 20)
         Me.telefonoLabel.TabIndex = 2
         Me.telefonoLabel.Text = "TELEFONO:"
         '
@@ -139,17 +139,17 @@ Partial Class UserControl1
         '
         Me.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.emailLabel.AutoSize = True
-        Me.emailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.emailLabel.Location = New System.Drawing.Point(100, 282)
+        Me.emailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.emailLabel.Location = New System.Drawing.Point(94, 282)
         Me.emailLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.emailLabel.Name = "emailLabel"
-        Me.emailLabel.Size = New System.Drawing.Size(62, 20)
+        Me.emailLabel.Size = New System.Drawing.Size(68, 20)
         Me.emailLabel.TabIndex = 3
         Me.emailLabel.Text = "EMAIL:"
         '
         'nombreTextBox
         '
-        Me.nombreTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.nombreTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.nombreTextBox.Location = New System.Drawing.Point(166, 96)
         Me.nombreTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.nombreTextBox.Name = "nombreTextBox"
@@ -158,14 +158,16 @@ Partial Class UserControl1
         '
         'tituloLabel
         '
-        Me.tituloLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tituloLabel.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.tituloLabel.AutoSize = True
-        Me.tituloLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tituloLabel.BackColor = System.Drawing.SystemColors.MenuText
+        Me.tituloLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tituloLabel.ForeColor = System.Drawing.SystemColors.Window
         Me.tituloLabel.Location = New System.Drawing.Point(166, 29)
         Me.tituloLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.tituloLabel.MinimumSize = New System.Drawing.Size(232, 22)
         Me.tituloLabel.Name = "tituloLabel"
-        Me.tituloLabel.Size = New System.Drawing.Size(250, 29)
+        Me.tituloLabel.Size = New System.Drawing.Size(240, 29)
         Me.tituloLabel.TabIndex = 5
         Me.tituloLabel.Text = "FICHA CONTACTO"
         '
@@ -189,10 +191,10 @@ Partial Class UserControl1
         '
         Me.emailButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.emailButton.BackColor = System.Drawing.Color.MediumPurple
-        Me.emailButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.emailButton.Location = New System.Drawing.Point(127, 19)
+        Me.emailButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.emailButton.Location = New System.Drawing.Point(127, 9)
         Me.emailButton.Name = "emailButton"
-        Me.emailButton.Size = New System.Drawing.Size(118, 23)
+        Me.emailButton.Size = New System.Drawing.Size(118, 42)
         Me.emailButton.TabIndex = 1
         Me.emailButton.Text = "Email"
         Me.emailButton.UseVisualStyleBackColor = False
@@ -201,10 +203,10 @@ Partial Class UserControl1
         '
         Me.llamarButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.llamarButton.BackColor = System.Drawing.Color.LimeGreen
-        Me.llamarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.llamarButton.Location = New System.Drawing.Point(3, 19)
+        Me.llamarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llamarButton.Location = New System.Drawing.Point(3, 9)
         Me.llamarButton.Name = "llamarButton"
-        Me.llamarButton.Size = New System.Drawing.Size(118, 23)
+        Me.llamarButton.Size = New System.Drawing.Size(118, 42)
         Me.llamarButton.TabIndex = 0
         Me.llamarButton.Text = "Llamar"
         Me.llamarButton.UseVisualStyleBackColor = False

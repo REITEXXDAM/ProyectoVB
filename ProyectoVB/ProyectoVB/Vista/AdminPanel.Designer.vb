@@ -49,7 +49,7 @@ Partial Class AdminPanel
         '
         'panelLayoutPanel
         '
-        Me.panelLayoutPanel.BackColor = System.Drawing.SystemColors.Highlight
+        Me.panelLayoutPanel.BackColor = System.Drawing.Color.CornflowerBlue
         Me.panelLayoutPanel.ColumnCount = 2
         Me.panelLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.84426!))
         Me.panelLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.15574!))
@@ -81,6 +81,7 @@ Partial Class AdminPanel
         '
         Me.agendaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.agendaLabel.AutoSize = True
+        Me.agendaLabel.BackColor = System.Drawing.SystemColors.MenuText
         Me.agendaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agendaLabel.ForeColor = System.Drawing.SystemColors.Window
         Me.agendaLabel.Location = New System.Drawing.Point(147, 33)
@@ -95,7 +96,7 @@ Partial Class AdminPanel
         Me.emailContactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.emailContactoGroupBox.Controls.Add(Me.emailContactoTextBox)
         Me.emailContactoGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.emailContactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.emailContactoGroupBox.ForeColor = System.Drawing.SystemColors.MenuText
         Me.emailContactoGroupBox.Location = New System.Drawing.Point(225, 443)
         Me.emailContactoGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.emailContactoGroupBox.Name = "emailContactoGroupBox"
@@ -118,7 +119,7 @@ Partial Class AdminPanel
         Me.telefonoContactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.telefonoContactoGroupBox.Controls.Add(Me.telefonoContactoTextBox)
         Me.telefonoContactoGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.telefonoContactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.telefonoContactoGroupBox.ForeColor = System.Drawing.SystemColors.MenuText
         Me.telefonoContactoGroupBox.Location = New System.Drawing.Point(225, 338)
         Me.telefonoContactoGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.telefonoContactoGroupBox.Name = "telefonoContactoGroupBox"
@@ -141,7 +142,7 @@ Partial Class AdminPanel
         Me.apellidoContactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.apellidoContactoGroupBox.Controls.Add(Me.apellidoContactoTextBox)
         Me.apellidoContactoGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.apellidoContactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.apellidoContactoGroupBox.ForeColor = System.Drawing.SystemColors.MenuText
         Me.apellidoContactoGroupBox.Location = New System.Drawing.Point(225, 233)
         Me.apellidoContactoGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.apellidoContactoGroupBox.Name = "apellidoContactoGroupBox"
@@ -164,7 +165,7 @@ Partial Class AdminPanel
         Me.nombreContactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nombreContactoGroupBox.Controls.Add(Me.nombreContactoTextBox)
         Me.nombreContactoGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nombreContactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.nombreContactoGroupBox.ForeColor = System.Drawing.SystemColors.MenuText
         Me.nombreContactoGroupBox.Location = New System.Drawing.Point(225, 128)
         Me.nombreContactoGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.nombreContactoGroupBox.Name = "nombreContactoGroupBox"
@@ -197,6 +198,7 @@ Partial Class AdminPanel
         'eliminarButton
         '
         Me.eliminarButton.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.eliminarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.eliminarButton.Location = New System.Drawing.Point(801, 438)
         Me.eliminarButton.Margin = New System.Windows.Forms.Padding(2)
         Me.eliminarButton.Name = "eliminarButton"
@@ -208,6 +210,7 @@ Partial Class AdminPanel
         'actualizarButton
         '
         Me.actualizarButton.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.actualizarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.actualizarButton.Location = New System.Drawing.Point(802, 332)
         Me.actualizarButton.Margin = New System.Windows.Forms.Padding(2)
         Me.actualizarButton.Name = "actualizarButton"
@@ -219,6 +222,7 @@ Partial Class AdminPanel
         'insertarButton
         '
         Me.insertarButton.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.insertarButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.insertarButton.Location = New System.Drawing.Point(802, 227)
         Me.insertarButton.Margin = New System.Windows.Forms.Padding(2)
         Me.insertarButton.Name = "insertarButton"
@@ -232,7 +236,7 @@ Partial Class AdminPanel
         Me.contactoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.contactoGroupBox.Controls.Add(Me.contactoComboBox)
         Me.contactoGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.contactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.contactoGroupBox.ForeColor = System.Drawing.SystemColors.MenuText
         Me.contactoGroupBox.Location = New System.Drawing.Point(754, 107)
         Me.contactoGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.contactoGroupBox.Name = "contactoGroupBox"

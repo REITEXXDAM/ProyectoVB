@@ -76,6 +76,10 @@
     Private Sub fichaEmpleadoLayoutPanel_Paint(sender As Object, e As PaintEventArgs) Handles fichaEmpleadoLayoutPanel.Paint
 
     End Sub
+
+    Private Sub tituloLabel_Click(sender As Object, e As EventArgs) Handles tituloLabel.Click
+
+    End Sub
 End Class
 
 

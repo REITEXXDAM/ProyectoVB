@@ -19,7 +19,6 @@
             End If
         Next
 
-        ' Muestra el mensaje correspondiente
         Return usuarioEncontrado
     End Function
 
@@ -64,8 +63,6 @@
             ' Llamar al método en SQLiteCommand para insertar el contacto en la base de datos
             Dim sqliteCommand As New SQLiteCommand()
             sqliteCommand.InsertarContacto(nombre, apellido, telefono, email, conexionBBDD)
-
-            ' Puedes realizar más validaciones o acciones después de la inserción si es necesario
 
             Return True
         Catch ex As Exception

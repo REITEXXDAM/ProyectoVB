@@ -35,7 +35,7 @@ Partial Class UserPanel
         '
         'panelLayoutPanel
         '
-        Me.panelLayoutPanel.BackColor = System.Drawing.SystemColors.Highlight
+        Me.panelLayoutPanel.BackColor = System.Drawing.Color.CornflowerBlue
         Me.panelLayoutPanel.ColumnCount = 2
         Me.panelLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.84426!))
         Me.panelLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.15574!))
@@ -60,6 +60,7 @@ Partial Class UserPanel
         '
         Me.agendaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.agendaLabel.AutoSize = True
+        Me.agendaLabel.BackColor = System.Drawing.SystemColors.MenuText
         Me.agendaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agendaLabel.ForeColor = System.Drawing.SystemColors.Window
         Me.agendaLabel.Location = New System.Drawing.Point(41, 37)
@@ -86,7 +87,7 @@ Partial Class UserPanel
         Me.contactoGroupBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.contactoGroupBox.Controls.Add(Me.contactoComboBox)
         Me.contactoGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.contactoGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.contactoGroupBox.ForeColor = System.Drawing.SystemColors.MenuText
         Me.contactoGroupBox.Location = New System.Drawing.Point(92, 116)
         Me.contactoGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.contactoGroupBox.Name = "contactoGroupBox"

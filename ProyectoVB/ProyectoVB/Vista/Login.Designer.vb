@@ -40,6 +40,7 @@ Partial Class Login
         '
         'principalLayoutPanel
         '
+        Me.principalLayoutPanel.BackColor = System.Drawing.Color.CornflowerBlue
         Me.principalLayoutPanel.ColumnCount = 2
         Me.principalLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.68821!))
         Me.principalLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.31179!))
@@ -81,6 +82,7 @@ Partial Class Login
         '
         Me.agendaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.agendaLabel.AutoSize = True
+        Me.agendaLabel.BackColor = System.Drawing.SystemColors.MenuText
         Me.agendaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agendaLabel.ForeColor = System.Drawing.SystemColors.Window
         Me.agendaLabel.Location = New System.Drawing.Point(63, 13)
@@ -93,9 +95,9 @@ Partial Class Login
         'loginButton
         '
         Me.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.loginButton.BackColor = System.Drawing.Color.BlueViolet
+        Me.loginButton.BackColor = System.Drawing.Color.DarkOrange
         Me.loginButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.loginButton.ForeColor = System.Drawing.SystemColors.Window
+        Me.loginButton.ForeColor = System.Drawing.SystemColors.MenuText
         Me.loginButton.Location = New System.Drawing.Point(382, 240)
         Me.loginButton.Margin = New System.Windows.Forms.Padding(45)
         Me.loginButton.Name = "loginButton"
@@ -129,7 +131,7 @@ Partial Class Login
         Me.passwordGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.passwordGroupBox.Controls.Add(Me.passwordTextBox)
         Me.passwordGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.passwordGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.passwordGroupBox.ForeColor = System.Drawing.SystemColors.MenuText
         Me.passwordGroupBox.Location = New System.Drawing.Point(2, 64)
         Me.passwordGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.passwordGroupBox.Name = "passwordGroupBox"
@@ -153,7 +155,7 @@ Partial Class Login
         Me.nameGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nameGroupBox.Controls.Add(Me.userTextBox)
         Me.nameGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nameGroupBox.ForeColor = System.Drawing.SystemColors.Window
+        Me.nameGroupBox.ForeColor = System.Drawing.SystemColors.MenuText
         Me.nameGroupBox.Location = New System.Drawing.Point(2, 2)
         Me.nameGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.nameGroupBox.Name = "nameGroupBox"
